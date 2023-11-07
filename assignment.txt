@@ -1,0 +1,50 @@
+Assignment 07 - Finding the path
+
+Theory
+
+1. What are various way to add images into our app? Explain with code examples?
+
+Using img logo
+<img src="url" alt="" />
+
+using import
+import image from "./public/image.jpg"
+
+const displayData = () => {
+    return(
+        <img src={image} alt="text />
+    )
+}
+
+2. What would happen if we do console.log(useState())?
+We will be getting an array with first index as undefined value and second index as a function which has name
+bound dispatchSetState
+
+3. How will useEffect behave if we dont add dependency array?
+
+=> If we dont add a dependency array, the cb function in useEffect will be executed every time the component is rendered and re-rendered 
+useEffect(() => {})
+
+=> If we add dependency array and is empty, the callback function will be executed only one time during the initial render of the component.
+useEffect(() => {},[])
+
+=> If we add dependency array with value in the array, the cb function will be executed one time during the initial render of the component and also rerender if there is a change in the condition.
+useEffect(() => {},[value])
+
+4. What is SPA?
+The SPA is known as single page application which is used to dynamically updates the webpage with data from web server without reloading/refreshing the entire page
+
+5. What is difference between client-side and server-side routing?
+In client side routing, during the first load, the webapp is loaded from server to client, after which whenever there is a change in URL, the router library navigates the user to the new page without sending any request to backend. All Single Page Applications uses client-side routing.
+
+In server-side routing, every change in URL, http request is made to server to fetch the webpage, and replace the current webpage with the older one.
+
+coding
+
+1. Add Shimmer Effect without installing a library
+2. Install react-router-dom.
+3. Create an appRouter and provide it to the app.
+4. Create a Home, About, and Contact Page with Link (use child routes).
+5. Make an Error page for routing errors.
+6. Create a Restaurant Page with dynamic restaurant ID.
+7. (Extra) - Create a login Page using Formik Library.
